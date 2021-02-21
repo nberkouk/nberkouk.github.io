@@ -27,14 +27,14 @@ a:hover {
 h1 {
     font-size: 2em;
     font-family:'Serif', 'Helvetica', 'Arial', 'Sans-Serif';
-    color: #4475A6;
+    color: #02490e;
 }
 h1.title {
     text-align: center;
 }
 
 h2 {
-    color:#0C3D6F;
+    color:#02490e;
 }
 p {
     font-size: 1em;
