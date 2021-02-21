@@ -15,8 +15,7 @@ nav ul, footer ul {
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-left: 20px;
-    margin-right: 20px auto; /* largeur inter section */
+ /* largeur inter section */
     float: none;
   position: absolute;
   top: 50%;
