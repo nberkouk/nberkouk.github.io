@@ -37,7 +37,7 @@ a:hover {
 }
 h1 {
     font-size: 2em;
-    font-family:'Didot';
+    font-family: 'Didot';
     color: #02490e;
 }
 h1.title {
@@ -53,7 +53,7 @@ p {
     color: #333;
 }
 p.subtitle {
-    color:#9EADBC;
+    color:#333;
     text-align: center;
 }
 
