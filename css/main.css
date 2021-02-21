@@ -8,7 +8,8 @@ body {
 nav ul, footer ul {
     font-family:'Optima';
     display: inline-block;
-    padding:0  30px;
+    padding:0  50px;
+    font-size: 1em;
     list-style: none;
     list-style-type: none;
     font-weight: bold;
@@ -16,8 +17,8 @@ nav ul, footer ul {
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-left: 20px;
-    margin-right: 20px; /* largeur inter section */
+    margin-left: 50px;
+    margin-right: 50px; /* largeur inter section */
 
 
 }
