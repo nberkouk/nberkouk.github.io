@@ -28,7 +28,7 @@ b { /* Color of href */
 }
 
 a:hover {
-    text-decoration: underline;
+      color: #02490e;
 }
 h1 {
     font-size: 2em;
