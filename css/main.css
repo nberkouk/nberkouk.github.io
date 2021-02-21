@@ -19,7 +19,7 @@ nav ul li, footer ul li {
 
 a { /* Color of href */
     text-decoration: none;
-    color: #340078;
+    color: #360867;
 }
 a:hover {
     text-decoration: underline;
@@ -39,10 +39,10 @@ h2 {
 p {
     font-size: 1em;
     line-height: 1.4em;
-    color: #02490e;
+    color: #333;
 }
 p.subtitle {
-    color:#02490e;
+    color:#9EADBC;
     text-align: center;
 }
 
