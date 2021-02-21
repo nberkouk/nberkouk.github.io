@@ -1,22 +1,22 @@
 body {
     margin: 60px auto;
-    width: 57%;
+    width: 65%;
     font:'Calibri', 'Ubuntu', 'Arial', 'Calibri';
     font-size:22px;
     background-color: #fff;
 }
 nav ul, footer ul {
     font-family:'Helvetica', 'Arial', 'Sans-Serif';
-    display: inline-block;
+    display: inline;
     padding: 0px;
     list-style: none;
     list-style-type: none;
     font-weight: bold;
 }
 nav ul li, footer ul li {
-    display: inline-block;
+    display: inline;
     margin-left: 20px;
-    margin-right: 20px; /* largeur inter section */
+    margin-right: 20px auto; /* largeur inter section */
 }
 
 a { /* Color of href */
