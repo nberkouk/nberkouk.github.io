@@ -17,8 +17,8 @@ nav ul, footer ul {
 }
 nav ul li, footer ul li {
     display: inline;
-    margin-left: 8%;
-    margin-right: 8%; /* largeur inter section */
+    margin-left: 5%;
+    margin-right: 5%; /* largeur inter section */
 
 
 }
