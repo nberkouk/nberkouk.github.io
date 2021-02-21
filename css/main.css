@@ -16,8 +16,8 @@ nav ul, footer ul {
 nav ul li, footer ul li {
     display: inline;
     margin-left: 20px;
-    margin-right: 20px auto; /* largeur inter section */
-  
+    margin-right: 20px; /* largeur inter section */
+
 }
 
 a { /* Color of href */
@@ -95,3 +95,18 @@ IMG.displayed {
     display: block;
     margin-left: auto;
     margin-right: auto }
+
+/* Add a black background color to the top navigation */
+    .topnav {
+      position: relative;
+      color: #360867;
+      overflow: hidden;
+    }
+
+    .topnav-centered a {
+      float: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
