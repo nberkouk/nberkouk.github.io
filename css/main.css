@@ -122,8 +122,6 @@ IMG.displayed {
       color: white;
     }
 
-
-
     .topnav-centered a {
       float: none;
       position: absolute;
@@ -131,3 +129,7 @@ IMG.displayed {
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
+.topnav-right {
+  float: right;
+}
