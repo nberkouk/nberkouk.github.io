@@ -21,6 +21,12 @@ a { /* Color of href */
     text-decoration: none;
     color: #360867;
 }
+
+b { /* Color of href */
+    text-decoration: none;
+    color: #02490e;
+}
+
 a:hover {
     text-decoration: underline;
 }
