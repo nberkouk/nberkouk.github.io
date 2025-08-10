@@ -11,7 +11,7 @@
     --color-accent-purple: #5c048f;
     --color-accent-green: #02490e;
     
-    --color-background: #f9f8fa; /* A softer, warmer off-white */
+    --color-background: #f9f8fa;
     --color-text-primary: #333333;
     --color-text-secondary: #777777;
     --color-border: #e8e8e8;
@@ -43,7 +43,7 @@ body {
     display: flex;
 }
 
-/* --- Sidebar (Left Column) --- */
+/* --- Sidebar (Left Column) - DESKTOP --- */
 .sidebar {
     width: 300px;
     flex-shrink: 0;
@@ -56,7 +56,8 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
+    transition: transform 0.3s ease; /* For potential future enhancements */
 }
 
 .profile-photo {
@@ -66,7 +67,7 @@ body {
     object-fit: cover;
     margin: 0 auto 20px auto;
     border: 1px solid var(--color-border);
-    padding: 5px; /* Creates a thin inner border effect */
+    padding: 5px;
     transition: transform 0.4s ease;
 }
 
@@ -108,7 +109,7 @@ body {
     transition: color 0.3s ease;
 }
 
-.main-nav a::after { /* Decorative underline effect */
+.main-nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -128,9 +129,9 @@ body {
     width: 100%;
 }
 
-/* --- Main Content (Right Column) --- */
+/* --- Main Content (Right Column) - DESKTOP --- */
 .main-content {
-    margin-left: 300px; /* Offset for fixed sidebar */
+    margin-left: 300px;
     padding: 60px 80px;
     flex-grow: 1;
 }
@@ -159,14 +160,14 @@ h2 {
     text-align: left;
 }
 
-/* --- Card Styling for News and Events --- */
+/* Card Styling for News and Events */
 .card {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 30px;
     margin-bottom: 25px;
     border: 1px solid var(--color-border);
-    box-shadow: none; /* Cleaner look, shadow appears on hover */
+    box-shadow: none;
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
@@ -175,7 +176,28 @@ h2 {
     box-shadow: var(--shadow-subtle);
 }
 
-/* --- Elegant Fixed Footer --- */
+/* Media containers for centering */
+.video-container, .image-container {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.video-container iframe, .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Hero subtitle styling */
+.hero-subtitle {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.5;
+}
+
+/* --- Elegant Fixed Footer - DESKTOP --- */
 .main-footer {
     position: fixed;
     bottom: 0;
@@ -184,8 +206,6 @@ h2 {
     padding: 20px;
     text-align: center;
     z-index: 100;
-
-    /* Frosted glass effect */
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     border-top: 1px solid var(--color-border);
@@ -211,24 +231,91 @@ h2 {
     color: var(--color-accent-purple);
 }
 
-/* --- Responsive Design for Mobile --- */
+/* =================================================================== */
+/* ==================== THOROUGH RESPONSIVE STYLES =================== */
+/* =================================================================== */
+
+/* Breakpoint for tablets and mobile phones */
 @media (max-width: 1024px) {
     .page-wrapper {
-        padding-bottom: 80px; /* Ensure space for footer on mobile */
+        padding-bottom: 75px; /* Adjust padding for mobile footer height */
     }
 
     .page-container {
+        /* Change layout from row to column */
         flex-direction: column;
     }
 
+    /* --- MOBILE SIDEBAR (NOW A HEADER) --- */
     .sidebar {
+        /* Un-fix the sidebar and make it a full-width header */
         position: relative;
         width: 100%;
         height: auto;
+        padding: 30px 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .sidebar h1 {
+        /* Reduce font size for mobile header */
+        font-size: 1.8em;
+    }
+    
+    .sidebar p.subtitle {
+        margin-bottom: 25px;
+    }
+    
+    .main-nav li {
+        /* Display nav items side-by-side */
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    /* --- MOBILE MAIN CONTENT --- */
+    .main-content {
+        /* Remove the desktop-only margin */
+        margin-left: 0;
+        /* Reduce padding for smaller screens */
+        padding: 40px 25px;
+    }
+    
+    /* --- MOBILE TYPOGRAPHY --- */
+    h2 {
+        /* Reduce heading size for mobile */
+        font-size: 2em;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1em;
+    }
+
+    /* --- MOBILE FOOTER --- */
+    .main-footer li {
+        /* Reduce spacing for smaller screens */
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further refinements for very small screens */
+    body {
+        font-size: 16px;
     }
 
     .main-content {
-        margin-left: 0;
-        padding: 40px 25px;
+        padding: 30px 20px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .main-footer {
+        padding: 15px;
+    }
+
+    .main-footer li {
+        margin: 0 10px;
     }
 }
