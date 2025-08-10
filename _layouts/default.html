@@ -9,37 +9,37 @@
 </head>
 <body>
 
-    <div class="page-container">
-        <!-- ===== SIDEBAR (LEFT COLUMN) ===== -->
-        <aside class="sidebar">
-            <img class="profile-photo" src="/photo_circle.png" alt="Nicolas Berkouk">
-            
-            <h1>Nicolas Berkouk</h1>
-            
-            <p class="subtitle">AI Scientific Expert<br>CNIL (French DPA) - AI Department</p>
-        </aside>
+    <!-- This wrapper is used to manage padding for the fixed footer -->
+    <div class="page-wrapper">
+        <div class="page-container">
+            <!-- ===== SIDEBAR (LEFT COLUMN) ===== -->
+            <aside class="sidebar">
+                <img class="profile-photo" src="/photo_circle.png" alt="Nicolas Berkouk">
+                
+                <h1>Nicolas Berkouk</h1>
+                
+                <p class="subtitle">AI Scientific Expert<br>CNIL (French DPA) - AI Department</p>
 
-        <!-- ===== MAIN CONTENT (RIGHT COLUMN) ===== -->
-        <main class="main-content">
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="/index.html" class="{% if page.url == '/index.html' %}active{% endif %}">Home</a></li>
-                    <li><a href="/research.html" class="{% if page.url == '/research.html' %}active{% endif %}">Research</a></li>
-                    <li><a href="/curriculum.html" class="{% if page.url == '/curriculum.html' %}active{% endif %}">CV</a></li>
-                    <li><a href="/teaching.html" class="{% if page.url == '/teaching.html' %}active{% endif %}">Teaching</a></li>
-                    <li><a href="https://psht-seminar.github.io/" target="_blank">PSHT Seminar</a></li>
-                </ul>
-            </nav>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="/index.html" class="{% if page.url == '/index.html' %}active{% endif %}">Home</a></li>
+                        <li><a href="/research.html" class="{% if page.url == '/research.html' %}active{% endif %}">Research</a></li>
+                        <li><a href="/curriculum.html" class="{% if page.url == '/curriculum.html' %}active{% endif %}">CV</a></li>
+                        <li><a href="/teaching.html" class="{% if page.url == '/teaching.html' %}active{% endif %}">Teaching</a></li>
+                        <li><a href="https://psht-seminar.github.io/" target="_blank">PSHT Seminar</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-            <!-- Jekyll will insert the page content here -->
-            <div class="content-wrapper">
+            <!-- ===== MAIN CONTENT (RIGHT COLUMN) ===== -->
+            <main class="main-content">
+                <!-- Jekyll will insert the page content here -->
                 {{ content }}
-            </div>
-        </main>
+            </main>
+        </div>
     </div>
 
-    <!-- ===== FIXED FOOTER (Email/Github/etc.) ===== -->
-    <!-- This is now outside the main container to be fixed to the screen -->
+    <!-- ===== ELEGANT FIXED FOOTER ===== -->
     <footer class="main-footer">
         <ul>
             <li><a href="mailto:firstsurnameletter+name@cnil.fr" target="_blank">Email</a></li>
