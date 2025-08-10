@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
-    <!-- Link to the updated main stylesheet -->
+    <!-- Link to the main stylesheet -->
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
@@ -17,8 +17,10 @@
             <h1>Nicolas Berkouk</h1>
             
             <p class="subtitle">AI Scientific Expert<br>CNIL (French DPA) - AI Department</p>
-            
-            <!-- Main navigation is now here for better mobile experience -->
+        </aside>
+
+        <!-- ===== MAIN CONTENT (RIGHT COLUMN) ===== -->
+        <main class="main-content">
             <nav class="main-nav">
                 <ul>
                     <li><a href="/index.html" class="{% if page.url == '/index.html' %}active{% endif %}">Home</a></li>
@@ -29,27 +31,22 @@
                 </ul>
             </nav>
 
-        </aside>
-
-        <!-- ===== MAIN CONTENT (RIGHT COLUMN) ===== -->
-        <main class="main-content">
-            
             <!-- Jekyll will insert the page content here -->
             <div class="content-wrapper">
                 {{ content }}
             </div>
-
-            <!-- This footer is now dynamically placed at the bottom -->
-            <footer class="main-footer">
-                <ul>
-                    <li><a href="mailto:firstsurnameletter+name@cnil.fr" target="_blank">Email</a></li>
-                    <li><a href="https://github.com/nberkouk" target="_blank">Github</a></li>
-                    <li><a href="https://scholar.google.fr/citations?user=nxkO-kIAAAAJ&hl=fr" target="_blank">Google Scholar</a></li>
-                </ul>
-            </footer>
-
         </main>
     </div>
+
+    <!-- ===== FIXED FOOTER (Email/Github/etc.) ===== -->
+    <!-- This is now outside the main container to be fixed to the screen -->
+    <footer class="main-footer">
+        <ul>
+            <li><a href="mailto:firstsurnameletter+name@cnil.fr" target="_blank">Email</a></li>
+            <li><a href="https://github.com/nberkouk" target="_blank">Github</a></li>
+            <li><a href="https://scholar.google.fr/citations?user=nxkO-kIAAAAJ&hl=fr" target="_blank">Google Scholar</a></li>
+        </ul>
+    </footer>
 
 </body>
 </html>
