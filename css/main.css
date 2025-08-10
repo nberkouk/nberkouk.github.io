@@ -1,102 +1,233 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- CSS Variables for Easy Customization --- */
+:root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Lora', serif;
+    
+    --color-background: #f8f9fa; /* Light gray background */
+    --color-sidebar: #ffffff;    /* White sidebar */
+    --color-text-primary: #212529; /* Very dark gray for text */
+    --color-text-secondary: #6c757d; /* Lighter gray for subtitles */
+    --color-accent: #0056b3;     /* Professional blue for links */
+    --color-border: #dee2e6;     /* Light border color */
+    
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Global Reset & Body Styling --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 60px auto;
-    width: 65%;
-    font:'Optima';
-    font-size:22px;
-    background-color: #fff;
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.7;
+    font-size: 17px;
 }
-nav ul, footer ul {
-    font-family:'Optima';
-    display: inline-block;
-    padding:0  50px;
-    font-size: 1em;
+
+/* --- Main Layout: Two Columns --- */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar (Left Column) --- */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0; /* Prevents the sidebar from shrinking */
+    background-color: var(--color-sidebar);
+    border-right: 1px solid var(--color-border);
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--color-border);
+}
+
+.sidebar h1 {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25em;
+}
+
+.sidebar p.subtitle {
+    font-size: 0.95em;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.sidebar-links {
     list-style: none;
-    list-style-type: none;
+    padding: 0;
+    margin-top: auto; /* Pushes the links to the bottom */
+}
+
+.sidebar-links li {
+    margin-bottom: 10px;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: var(--color-accent);
     font-weight: bold;
-    text-align:center;
-}
-nav ul li, footer ul li {
-    display: inline;
-    margin-left: 35px;
-    margin-right: 35px; /* largeur inter section */
-
-
 }
 
-a { /* Color of href */
+/* --- Main Content (Right Column) --- */
+.main-content {
+    flex-grow: 1; /* Allows the main content to take remaining space */
+    padding: 40px 60px;
+    max-width: 900px;
+}
+
+/* --- Navigation within Main Content --- */
+.main-nav {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.main-nav ul {
+    list-style: none;
+}
+
+.main-nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.main-nav a {
     text-decoration: none;
-    color: #5c048f;
+    font-family: var(--font-heading);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-b { /* Color of href */
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-accent);
+}
+
+/* --- Content Styling --- */
+a {
+    color: var(--color-accent);
+    font-weight: bold;
     text-decoration: none;
-    color: #02490e;
 }
 
 a:hover {
-      color: #02490e;
-}
-h1 {
-    font-size: 2em;
-    font-family: 'Didot';
-    color: #02490e;
-}
-h1.title {
-    text-align: center;
+    text-decoration: underline;
 }
 
 h2 {
-    font-family: 'Didot';
-    color:#02490e;
+    font-family: var(--font-heading);
+    font-size: 2em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-accent);
 }
-p {
-    font-family: 'Optima';
-    font-size: 1em;
-    line-height: 1.4em;
-    color: #333;
+
+section {
+    margin-bottom: 50px;
 }
-p.subtitle {
-    color:#a5a7a9;
+
+section p {
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+/* --- Card Styling for News and Events --- */
+.card-list {
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+}
+
+.card strong {
+    color: var(--color-text-primary);
+}
+
+.card em {
+    color: var(--color-text-secondary);
+    display: block;
+    margin-top: 5px;
+}
+
+/* --- Utility Classes --- */
+.video-container, .image-container {
+    margin: 30px 0;
     text-align: center;
 }
 
-footer {
-    font-size: .8em;
+iframe, .image-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
 }
 
-ul.posts {
-    margin: 20px auto 40px;
-    font-size: 1.5em;
-}
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 992px) {
+    .page-container {
+        flex-direction: column;
+    }
 
-ul.posts li {
-    list-style: none;
-}
-/* not in use for now */
-ol.publi {
-    list-style: none;
-    counter-reset: roman;
-    margin-left: 5%;
-    margin-right: 5%;
-    /* position: relative; */
-}
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
 
-ol.publi > li:not(.last):after {/* Trick to plot lines after list elem */
-    content: "";
-    display: block;
-    height: 1px;
-    /*width: 80%;*/
-    margin: 20px;
-    /*margin-left: 20%; */
-    background: grey;
-}
+    .sidebar-links {
+        margin-top: 30px;
+    }
 
-ol.publi > li:before {
-    counter-increment: roman;
-    content:"[" counter(roman, roman)"] "
-}
+    .sidebar-links li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+    
+    .main-content {
+        padding: 30px;
+    }
 
-IMG.displayed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto }
+    .main-nav ul li {
+        margin: 0 10px;
+    }
+}

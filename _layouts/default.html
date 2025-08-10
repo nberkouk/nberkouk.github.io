@@ -1,42 +1,49 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-			<title>{{ page.title }}</title>
-			<!-- link to main stylesheet -->
-			<link rel="stylesheet" type="text/css" href="/css/main.css">
-		</head>
-		<body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <!-- Link to the new main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
 
-		       <nav style="text-align:center">
-						 <ul>
-		          	<li>	<a href="/index.html"  >Home</a></li>
-		  					<li>	<a href="/research.html"  >Research</a></li>
-		  					<li>	<a href="/curriculum.html"  >CV</a> </li>
-		          	<li>	<a href="/teaching.html"  >Teaching</a> </li>
-								<li>	<a href="https://psht-seminar.github.io/"  >PSHT Online Seminar</a> </li>
-							</ul>
-		      	</nav>
+    <div class="page-container">
+        <!-- ===== SIDEBAR (LEFT COLUMN) ===== -->
+        <aside class="sidebar">
+            <img class="profile-photo" src="/photo_circle.png" alt="Nicolas Berkouk">
+            
+            <h1>Nicolas Berkouk</h1>
+            
+            <p class="subtitle">AI Scientific Expert<br>CNIL (French DPA) - AI Department</p>
 
-					<IMG class="displayed" src="photo_circle.png" >
-					<header>
-						<h1 class="title">Nicolas Berkouk</h1>
-						<!--<img src="photo.jpg" alt="Theo Lacombe" class="picture" />-->
-						<p class="subtitle">AI Scientific Expert - CNIL (French DPA) - AI Department</p>
-					</header>
+            <!-- These links were formerly in the footer -->
+            <ul class="sidebar-links">
+                <li><a href="mailto:firstsurnameletter+name@cnil.fr" target="_blank">Email</a></li>
+                <li><a href="https://github.com/nberkouk" target="_blank">Github</a></li>
+                <li><a href="https://scholar.google.fr/citations?user=nxkO-kIAAAAJ&hl=fr" target="_blank">Google Scholar</a></li>
+            </ul>
+        </aside>
 
+        <!-- ===== MAIN CONTENT (RIGHT COLUMN) ===== -->
+        <main class="main-content">
+            <nav class="main-nav">
+                <ul>
+                    <!-- Use page.url to highlight the active page -->
+                    <li><a href="/index.html" class="{% if page.url == '/index.html' %}active{% endif %}">Home</a></li>
+                    <li><a href="/research.html" class="{% if page.url == '/research.html' %}active{% endif %}">Research</a></li>
+                    <li><a href="/curriculum.html" class="{% if page.url == '/curriculum.html' %}active{% endif %}">CV</a></li>
+                    <li><a href="/teaching.html" class="{% if page.url == '/teaching.html' %}active{% endif %}">Teaching</a></li>
+                    <li><a href="https://psht-seminar.github.io/" target="_blank">PSHT Seminar</a></li>
+                </ul>
+            </nav>
 
+            <!-- Jekyll will insert the page content here -->
+            {{ content }}
 
-			<div class="container">
+        </main>
+    </div>
 
-			{{ content }}
-
-			</div><!-- /.container -->
-			<footer style="text-align:center">
-	        <ul>
-	            <li><a href="mailto:firstsurnameletter+name@cnil.fr">Email</a></li>
-	            <li><a href="https://github.com/nberkouk">Github</a></li>
-	      <li><a href="https://scholar.google.fr/citations?user=nxkO-kIAAAAJ&hl=fr">Google Scholar</a></li>
-	      </ul>
-	    </footer>
-		</body>
-	</html>
+</body>
+</html>
