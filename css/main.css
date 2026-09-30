@@ -5,7 +5,11 @@
 :root {
     --font-heading: 'Cormorant Garamond', serif;
     --font-body: 'Lato', sans-serif;
-    --accent: #5c048f;
+    --purple: #5c048f;
+    --teal: #0f766e;
+    --amber: #b45309;
+    --rose: #be4a63;
+    --accent: var(--purple);
     --text: #2c2c2c;
     --muted: #6e6e6e;
     --border: #e6e4ea;
@@ -26,10 +30,29 @@ body {
     font-size: 16.5px;
 }
 
+/* Per-page accent (colour-coded sections) */
+body.page-teal {
+    --accent: var(--teal);
+}
+
+body.page-amber {
+    --accent: var(--amber);
+}
+
+body.page-rose {
+    --accent: var(--rose);
+}
+
 /* ===== Header ===== */
 .site-header {
     background-color: #ffffff;
-    border-bottom: 1px solid var(--border);
+}
+
+.site-header::after {
+    content: '';
+    display: block;
+    height: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--teal), var(--amber), var(--rose));
 }
 
 .header-inner {
@@ -110,6 +133,18 @@ body {
     font-family: var(--font-heading);
     font-size: 1.75em;
     margin: 40px 0 14px;
+    position: relative;
+    padding-top: 18px;
+}
+
+.page h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
 }
 
 .page h3 {
@@ -146,13 +181,13 @@ body {
 }
 
 /* Numbered variant for publications */
+ol.card-list {
+    counter-reset: pub;
+}
+
 ol.card-list .card {
     position: relative;
     padding-left: 2em;
-}
-
-ol.card-list {
-    counter-reset: pub;
 }
 
 ol.card-list .card::before {
